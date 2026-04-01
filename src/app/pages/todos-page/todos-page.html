@@ -1,0 +1,20 @@
+<div>
+
+    <input [(ngModel)]="newTodo" type="text">
+
+    <p>{{ newTodo() }}</p>
+
+    <h1>Список дел</h1>
+
+    <div>
+        @for (todo of todos(); track todo.id) {
+
+        <div class="flex gap-x-3">
+            <span> {{todo.id}} </span>
+            <span> {{todo.text}} </span>
+            <input type="checkbox">
+        </div>
+
+        }
+    </div>
+</div>
