@@ -1,1 +1,18 @@
-<p>users-page works!</p>
+<div class="grid grid-cols-5 gap-5">
+    @for (user of users | async; track user.id) {
+
+    <a routerLink="/users/{{user.id}}">
+        <p>{{ user.name }}</p>
+        <p>{{ user.username }}</p>
+        <p>{{ user.phone }}</p>
+        <p>{{ user.address.city | uppercase}}</p>
+    </a>
+
+    }
+</div>
+
+<div>
+    @for (item of types; track $index) {
+    <p>{{item | beautify}}</p>
+    }
+</div>
