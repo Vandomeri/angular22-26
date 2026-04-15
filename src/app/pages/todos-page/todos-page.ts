@@ -11,8 +11,22 @@ export class TodosPage {
   newTodo = signal('')
 
   todos = signal([
-    { id: 1, text: "Купить молоко" },
-    { id: 2, text: "Убраться в доме" },
+    { id: 1, text: "Купить молоко", completed: false },
+    { id: 2, text: "Убраться в доме", completed: true },
   ])
+
+
+  deleteTodo(id: number) {
+    this.todos.update(todosOld => todosOld.filter(item => item.id !== id))
+  }
+
+  addTodo() {
+    this.todos.update(oldTodos => [...oldTodos, { id: Date.now(), completed: false, text: this.newTodo() }])
+    this.newTodo.set('')
+  }
+
+  editTodo() {
+
+  }
 
 }

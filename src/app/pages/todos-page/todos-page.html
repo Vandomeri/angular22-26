@@ -1,6 +1,6 @@
 <div>
 
-    <input [(ngModel)]="newTodo" type="text">
+    <input [(ngModel)]="newTodo" type="text" (keyup.enter)="addTodo()">
 
     <p>{{ newTodo() }}</p>
 
@@ -9,10 +9,10 @@
     <div>
         @for (todo of todos(); track todo.id) {
 
-        <div class="flex gap-x-3">
+        <div (dblclick)="deleteTodo(todo.id)" class="flex gap-x-3 {{todo.completed && 'text-red-500'}}">
             <span> {{todo.id}} </span>
             <span> {{todo.text}} </span>
-            <input type="checkbox">
+            <input [(ngModel)]="todo.completed" type="checkbox">
         </div>
 
         }
