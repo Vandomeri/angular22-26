@@ -1,8 +1,11 @@
 <header>
-
+    <input class="fixed bottom-10 left-10" [(ngModel)]="bodyColor" type="color">
+    <p>{{bodyColor()}}</p>
 </header>
 
 
 <main>
     <router-outlet />
+    <p class="mt-20">{{bodyColor()}}</p>
+
 </main>

@@ -1,11 +1,11 @@
 <div>
-
     <app-collapse title="Кто первый из этой группы пойдет в армию?" text="Старичков" />
     <app-collapse title="2 + 2?" text="4" />
-
 </div>
 
-<p>{{'Привет Angular' | uppercase}}</p>
-<p>Стоимость товара: {{ 500 | currency: "INR" : 'symbol-narrow'}}</p>
+<input type="text">
+<p contrast>{{'Привет Angular' | uppercase}}</p>
+<p class="{{1 === 1 && 'bg-amber-500'}}">{{'Привет Angular' | uppercase}}</p>
+<p contrast>Стоимость товара: {{ 500 | currency: "INR" : 'symbol-narrow'}}</p>
 
 <p>Сейчас у нас: {{now | date: 'dd-MM-yy'}} </p>
